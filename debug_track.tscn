@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwkf3m3y3p4rb"]
+
+[ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Ring.tscn" id="1_h8t7m"]
+[ext_resource type="PackedScene" uid="uid://bjhf3c5shdody" path="res://Firer.tscn" id="2_h8t7m"]
+[ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://label.gd" id="3_2g68u"]
+
+[node name="Debug Track" type="Node2D"]
+
+[node name="Ring" parent="." instance=ExtResource("1_h8t7m")]
+
+[node name="Firer" parent="." instance=ExtResource("2_h8t7m")]
+position = Vector2(1783, -63)
+
+[node name="KillShot" type="Marker2D" parent="."]
+
+[node name="Point 1" type="Marker2D" parent="."]
+position = Vector2(0, -600)
+
+[node name="Point 2" type="Marker2D" parent="."]
+position = Vector2(0, 600)
+
+[node name="Point 3" type="Marker2D" parent="."]
+position = Vector2(600, 0)
+
+[node name="Point 4" type="Marker2D" parent="."]
+position = Vector2(-600, 0)
+
+[node name="Point 5" type="Marker2D" parent="."]
+position = Vector2(300, -520)
+
+[node name="Point 6" type="Marker2D" parent="."]
+position = Vector2(520, -300)
+
+[node name="Point 7" type="Marker2D" parent="."]
+position = Vector2(520, 300)
+
+[node name="Point 8" type="Marker2D" parent="."]
+position = Vector2(300, 520)
+
+[node name="Point 9" type="Marker2D" parent="."]
+position = Vector2(-300, 520)
+
+[node name="Point 10" type="Marker2D" parent="."]
+position = Vector2(-520, 300)
+
+[node name="Point 11" type="Marker2D" parent="."]
+position = Vector2(-520, -300)
+
+[node name="Point 12" type="Marker2D" parent="."]
+position = Vector2(-300, -520)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+script = ExtResource("3_2g68u")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbtfvpsdo3d4f"]
+
+[ext_resource type="Script" uid="uid://cdlnir788a2ye" path="res://destroyOrb.gd" id="1_3ycgy"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_l3w6f"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l3w6f"]
+radius = 8.0
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+motion_mode = 1
+script = ExtResource("1_3ycgy")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(14.9075, 14.9075)
+mesh = SubResource("SphereMesh_l3w6f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_l3w6f")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." groups=["orb"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_l3w6f")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
