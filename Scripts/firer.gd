@@ -3,7 +3,7 @@ extends Node2D
 @onready var pointer = $".."
 @onready var reload_timer = $"ReloadTimer"
 @onready var main = get_tree().get_root()
-@onready var projectile = load("res://Orb.tscn")
+@onready var projectile = load("res://Prefabs/Orb.tscn")
 
 func fire():
 	look_at(pointer.global_position)

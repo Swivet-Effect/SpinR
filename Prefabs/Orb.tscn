@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dbtfvpsdo3d4f"]
 
-[ext_resource type="Script" uid="uid://cdlnir788a2ye" path="res://destroyOrb.gd" id="1_3ycgy"]
+[ext_resource type="Script" uid="uid://cdlnir788a2ye" path="res://Scripts/destroyOrb.gd" id="1_3ycgy"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_l3w6f"]
 

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwkf3m3y3p4rb"]
+
+[ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Prefabs/Ring.tscn" id="1_sx3po"]
+[ext_resource type="Script" uid="uid://f1051em3ulga" path="res://Scripts/RunMap.gd" id="2_5flaf"]
+[ext_resource type="PackedScene" uid="uid://bjhf3c5shdody" path="res://Prefabs/Firer.tscn" id="3_5ixmr"]
+[ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/label.gd" id="4_glvyh"]
+
+[node name="Debug Track" type="Node2D"]
+
+[node name="Ring" parent="." instance=ExtResource("1_sx3po")]
+
+[node name="KillShot" type="Marker2D" parent="."]
+script = ExtResource("2_5flaf")
+
+[node name="Firer" parent="KillShot" instance=ExtResource("3_5ixmr")]
+position = Vector2(0, -600)
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+script = ExtResource("4_glvyh")

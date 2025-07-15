@@ -2,14 +2,13 @@ extends Marker2D
 
 @onready var firer = $Firer
 var map = {}
-var map_file_path = "res://Map.json"
+var map_file_path = "res://Maps/Map.json"
 var beat = 0
 
 func move():
 	if beat < map.size():
 		rotation_degrees = map[beat]
 		firer.fire()
-		print(map[beat])
 		beat += 1
 	
 func _ready():
