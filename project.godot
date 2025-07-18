@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Rythm Spin"
+config/name="SpinR"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.129412, 0.145098, 0.176471, 1)
 
@@ -22,6 +22,7 @@ Speedcontrol="*res://Scripts/speedcontrol.gd"
 
 window/size/viewport_width=800
 window/size/viewport_height=800
+window/vsync/vsync_mode=0
 
 [global_group]
 

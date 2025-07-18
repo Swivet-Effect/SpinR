@@ -12,7 +12,7 @@ size = Vector2(1.03223, 1.14286)
 [sub_resource type="CircleShape2D" id="CircleShape2D_1f0n0"]
 radius = 119.708
 
-[node name="Ring" type="Camera2D"]
+[node name="Ring" type="Node2D"]
 
 [node name="Ring Outer" type="MeshInstance2D" parent="."]
 position = Vector2(1, 0)

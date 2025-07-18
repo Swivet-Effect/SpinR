@@ -7,13 +7,15 @@
 
 [node name="Debug Track" type="Node2D"]
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="Ring" parent="." instance=ExtResource("1_sx3po")]
 
 [node name="KillShot" type="Marker2D" parent="."]
 script = ExtResource("2_5flaf")
 
 [node name="Firer" parent="KillShot" instance=ExtResource("3_5ixmr")]
-position = Vector2(0, -600)
+position = Vector2(0, -968)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
