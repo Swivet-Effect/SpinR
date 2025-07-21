@@ -1,8 +1,10 @@
 extends Marker2D
 
+@onready var audioPlayer = $AudioStreamPlayer
 @onready var firer = $Firer
 var map = {}
 var mapMeta = {}
+var map_audio_path = load("res://Maps/TestMap/testmusic.mp3")
 var map_file_path = "res://Maps/TestMap/Map.json"
 var map_meta_path = "res://Maps/TestMap/MapMeta.json"
 
@@ -34,8 +36,9 @@ func _ready():
 		print("No Meta File Found")
 	
 	Speedcontrol.speed = mapMeta["speed"]
-	print(Speedcontrol.speed)
-	
 	Speedcontrol.reset = false
+	
+	audioPlayer.stream = map_audio_path
+	audioPlayer.play()
 	
 	move()
