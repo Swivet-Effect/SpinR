@@ -3,14 +3,13 @@ extends Marker2D
 @onready var firer = $Firer
 var map = {}
 var map_file_path = "res://Maps/Map.json"
-var beat = 0
 
 func move():
-	if beat < map.size():
-		rotation_degrees = map[beat]
+	if Speedcontrol.beat < map.size():
+		rotation_degrees = map[Speedcontrol.beat]
 		firer.fire()
-		beat += 1
-	
+		Speedcontrol.beat += 1
+
 func _ready():
 	if FileAccess.file_exists(map_file_path):
 		var dataFile = FileAccess.open(map_file_path, FileAccess.READ)
@@ -21,5 +20,7 @@ func _ready():
 			print("Error Reading File")
 	else:
 		print("No File Found")
+	
+	Speedcontrol.reset = false
 	
 	move()

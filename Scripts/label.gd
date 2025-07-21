@@ -2,7 +2,7 @@ extends Label
 
 var accuracy : float
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Speedcontrol.totalOrbs == 0:
 		accuracy = 100
 	else:
