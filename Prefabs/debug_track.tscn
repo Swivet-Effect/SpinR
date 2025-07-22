@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Prefabs/Ring.tscn" id="1_sx3po"]
 [ext_resource type="Script" uid="uid://f1051em3ulga" path="res://Scripts/RunMap.gd" id="2_5flaf"]
 [ext_resource type="PackedScene" uid="uid://bjhf3c5shdody" path="res://Prefabs/Firer.tscn" id="3_5ixmr"]
-[ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/label.gd" id="4_glvyh"]
+[ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/AccuracyScript.gd" id="4_glvyh"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx3po"]
 bg_color = Color(0.585847, 1.8049e-06, 4.33177e-07, 1)
@@ -26,19 +26,19 @@ expand_margin_right = 10.0
 
 [node name="Debug Track" type="Node2D"]
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Game Camera" type="Camera2D" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Camera2D"]
+[node name="UI" type="CanvasLayer" parent="Game Camera"]
 visible = false
 script = ExtResource("1_5flaf")
 
-[node name="Panel" type="Panel" parent="Camera2D/CanvasLayer"]
+[node name="Screen Darken" type="Panel" parent="Game Camera/UI"]
 offset_left = -2.0
 offset_top = -2.0
 offset_right = 801.0
 offset_bottom = 801.0
 
-[node name="Label" type="Label" parent="Camera2D/CanvasLayer/Panel"]
+[node name="Failure Text" type="Label" parent="Game Camera/UI/Screen Darken"]
 layout_mode = 0
 offset_left = 199.0
 offset_top = 234.0
@@ -47,7 +47,7 @@ offset_bottom = 400.0
 theme_override_font_sizes/font_size = 121
 text = "FAILED"
 
-[node name="Button" type="Button" parent="Camera2D/CanvasLayer/Panel"]
+[node name="Restart Button" type="Button" parent="Game Camera/UI/Screen Darken"]
 layout_mode = 0
 offset_left = 321.0
 offset_top = 427.0
@@ -69,19 +69,19 @@ text = "RETRY"
 
 [node name="Ring" parent="." instance=ExtResource("1_sx3po")]
 
-[node name="KillShot" type="Marker2D" parent="."]
+[node name="Screen Center" type="Marker2D" parent="."]
 script = ExtResource("2_5flaf")
 
-[node name="Firer" parent="KillShot" instance=ExtResource("3_5ixmr")]
+[node name="Firer" parent="Screen Center" instance=ExtResource("3_5ixmr")]
 position = Vector2(0, -968)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="KillShot"]
+[node name="Music Player" type="AudioStreamPlayer" parent="Screen Center"]
 
-[node name="Label" type="Label" parent="."]
+[node name="Accuracy" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -11.0
 offset_right = 20.0
 offset_bottom = 12.0
 script = ExtResource("4_glvyh")
 
-[connection signal="pressed" from="Camera2D/CanvasLayer/Panel/Button" to="Camera2D/CanvasLayer" method="_on_button_pressed"]
+[connection signal="pressed" from="Game Camera/UI/Screen Darken/Restart Button" to="Game Camera/UI" method="_on_button_pressed"]

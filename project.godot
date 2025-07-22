@@ -17,7 +17,7 @@ boot_splash/bg_color=Color(0.129412, 0.145098, 0.176471, 1)
 
 [autoload]
 
-Speedcontrol="*res://Scripts/speedcontrol.gd"
+Global="*res://Scripts/GlobalVariables.gd"
 
 [display]
 
