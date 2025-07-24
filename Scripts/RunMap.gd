@@ -4,7 +4,7 @@ extends Marker2D
 @onready var firer = $Firer
 
 var map = {}
-var map_file_path = "res://Maps/TestMap/Map.json"
+var map_file_path = "C:/Users/dyfry/AppData/Roaming/SpinR/Test2.spr"
 
 func move():
 	if Global.beat < map.size():
@@ -13,16 +13,22 @@ func move():
 		Global.beat += 1
 
 func _ready():
-	if FileAccess.file_exists(map_file_path):
-		var dataFile = FileAccess.open(map_file_path, FileAccess.READ)
-		var parsedResult = JSON.parse_string(dataFile.get_as_text())
-		map = parsedResult
+	var reader = ZIPReader.new()
+	reader.open(map_file_path)
+	var mapRawData = reader.read_file("map.json")
+	var mapString = mapRawData.get_string_from_utf8()
+	var parseMapData = JSON.parse_string(mapString)
+	map = parseMapData
+
+	var musicfile = reader.read_file("music.mp3")
+	var music = AudioStreamMP3.load_from_buffer(musicfile)
+	
+	reader.close()
 	
 	Global.speed = map[0]["speed"]
 	Global.reset = false
-	
-	var map_audio_path = load(map[0]["audioPath"])
-	audioPlayer.stream = map_audio_path
+
+	audioPlayer.stream = music
 	audioPlayer.play()
 	
 	move()

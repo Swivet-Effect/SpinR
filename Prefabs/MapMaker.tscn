@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3gtujqldsf6o"]
+
+[ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Prefabs/Ring.tscn" id="1_jv8m0"]
+
+[node name="MapMaker" type="Node2D"]
+
+[node name="Ring" parent="." instance=ExtResource("1_jv8m0")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
