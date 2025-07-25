@@ -4,7 +4,7 @@ extends Control
 var userPath = OS.get_data_dir()
 
 # Letting the user set the route to their music file
-var musicPath = "res://Maps/TestMap/testmusic.mp3"
+var musicPath = ""
 
 func _on_continue_button_pressed():
 	# Taking the player's name input for the map

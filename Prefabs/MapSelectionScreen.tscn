@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnrtb4oq4yuoi"]
+
+[ext_resource type="Script" uid="uid://d4jg7b7oynl0v" path="res://Scripts/ListMaps.gd" id="1_gc2ov"]
+
+[node name="Map Selection Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Title" type="Label" parent="CanvasLayer"]
+offset_top = 11.0
+offset_right = 800.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 31
+text = "- Select a map -"
+horizontal_alignment = 1
+
+[node name="BreakLine" type="ColorRect" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 63.0
+offset_right = 779.0
+offset_bottom = 64.0
+
+[node name="ScrollBar" type="ScrollContainer" parent="CanvasLayer"]
+offset_left = 22.0
+offset_top = 74.0
+offset_right = 779.0
+offset_bottom = 796.0
+horizontal_scroll_mode = 0
+
+[node name="MapList" type="VBoxContainer" parent="CanvasLayer/ScrollBar"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 5
+script = ExtResource("1_gc2ov")
+
+[node name="NoMapsText" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 2.0
+offset_top = 227.0
+offset_right = 800.0
+offset_bottom = 404.0
+theme_override_font_sizes/font_size = 41
+text = "It looks like
+we can't find
+any maps"
+horizontal_alignment = 1
