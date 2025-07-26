@@ -8,11 +8,12 @@ extends Node2D
 func fire():
 	look_at(pointer.global_position)
 	
-	var instance = projectile.instantiate()
-	instance.dir = global_rotation
-	instance.spawnPos = global_position
-	instance.spawnRot = rotation
-	main.add_child.call_deferred(instance)
+	if pointer.map[Global.beat] != 0:
+		var instance = projectile.instantiate()
+		instance.dir = global_rotation
+		instance.spawnPos = global_position
+		instance.spawnRot = rotation
+		main.add_child.call_deferred(instance)
 
 	reload_timer.start()
 

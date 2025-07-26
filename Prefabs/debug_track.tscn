@@ -77,6 +77,10 @@ position = Vector2(0, -968)
 
 [node name="Music Player" type="AudioStreamPlayer" parent="Screen Center"]
 
+[node name="MusicDelay" type="Timer" parent="Screen Center"]
+wait_time = 0.3
+one_shot = true
+
 [node name="Accuracy" type="Label" parent="."]
 offset_left = -20.0
 offset_top = -11.0
@@ -85,3 +89,5 @@ offset_bottom = 12.0
 script = ExtResource("4_glvyh")
 
 [connection signal="pressed" from="Game Camera/UI/Screen Darken/Restart Button" to="Game Camera/UI" method="_on_button_pressed"]
+[connection signal="finished" from="Screen Center/Music Player" to="Screen Center" method="_on_music_player_finished"]
+[connection signal="timeout" from="Screen Center/MusicDelay" to="Screen Center" method="_on_music_delay_timeout"]

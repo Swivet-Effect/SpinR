@@ -4,7 +4,7 @@ extends Marker2D
 @onready var firer = $Firer
 
 var map = {}
-var map_file_path = "C:/Users/dyfry/AppData/Roaming/SpinR/Test2.spr"
+var map_file_path = "C:/Users/dyfry/AppData/Roaming/SpinR/" + Global.mapTitle + ".spr"
 
 func move():
 	if Global.beat < map.size():
@@ -27,8 +27,15 @@ func _ready():
 	
 	Global.speed = map[0]["speed"]
 	Global.reset = false
-
+	
 	audioPlayer.stream = music
-	audioPlayer.play()
+	
+	$MusicDelay.start()
 	
 	move()
+
+func _on_music_delay_timeout() -> void:
+	audioPlayer.play()
+
+func _on_music_player_finished() -> void:
+	get_tree().change_scene_to_file("res://Prefabs/MapSelectionScreen.tscn")

@@ -7,14 +7,14 @@ var button = load("res://Prefabs/MapButton.tscn")
 func isSPRFile(file):
 	if file.get_extension() == "spr":
 		var instance = button.instantiate()
-		instance.text = file
+		instance.text = file.replace(".spr", "")
 		$".".add_child(instance)
 
 func _ready():
 	var mapsList = DirAccess.get_files_at(mapsPath)
 	var mapListArray = Array(mapsList)
-	if mapListArray.filter(isSPRFile).size() != 0:
-		mapListArray.filter(isSPRFile)
-	else:
-		$"../../NoMapsText".visible = true
 	
+	if mapListArray.filter(isSPRFile).size() > 1:
+		$"../../NoMapsText".visible = true
+	else:
+		return

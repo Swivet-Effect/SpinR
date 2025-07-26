@@ -5,6 +5,7 @@ func _physics_process(_delta):
 		$".".visible = false
 	else:
 		$".".visible = true
+		$"../../Screen Center/Music Player".playing = false
 
 func _on_button_pressed():
 	Global.failedCheck = 0

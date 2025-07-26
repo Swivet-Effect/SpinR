@@ -13,3 +13,4 @@ func _physics_process(_delta):
 				look_at(stickInput)
 			_ :
 				print("Unkown Input Type")
+		Global.playerRot = $".".global_rotation_degrees
