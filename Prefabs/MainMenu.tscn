@@ -27,15 +27,24 @@ offset_top = 489.0
 offset_right = 474.0
 offset_bottom = 533.0
 theme_override_font_sizes/font_size = 26
-text = "Play"
+text = "Play Map"
 
 [node name="MapMakerButton" type="Button" parent="CanvasLayer"]
-offset_left = 326.0
-offset_top = 572.0
-offset_right = 477.0
-offset_bottom = 616.0
+offset_left = 323.0
+offset_top = 540.0
+offset_right = 474.0
+offset_bottom = 584.0
 theme_override_font_sizes/font_size = 26
 text = "Map Maker"
 
+[node name="PracticeButton" type="Button" parent="CanvasLayer"]
+offset_left = 323.0
+offset_top = 592.0
+offset_right = 474.0
+offset_bottom = 636.0
+theme_override_font_sizes/font_size = 26
+text = "Practice"
+
 [connection signal="pressed" from="CanvasLayer/MapsButton" to="." method="_on_debug_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/MapMakerButton" to="." method="_on_map_maker_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PracticeButton" to="." method="_on_practice_button_pressed"]
