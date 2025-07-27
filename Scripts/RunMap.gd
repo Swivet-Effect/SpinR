@@ -8,7 +8,8 @@ var map_file_path = "C:/Users/dyfry/AppData/Roaming/SpinR/" + Global.mapTitle + 
 
 func move():
 	if Global.beat < map.size():
-		rotation_degrees = map[Global.beat]
+		if map[Global.beat] != null:
+			rotation_degrees = map[Global.beat]
 		firer.fire()
 		Global.beat += 1
 

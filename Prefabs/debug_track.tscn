@@ -73,12 +73,12 @@ text = "RETRY"
 script = ExtResource("2_5flaf")
 
 [node name="Firer" parent="Screen Center" instance=ExtResource("3_5ixmr")]
-position = Vector2(0, -968)
+position = Vector2(600, 0)
 
 [node name="Music Player" type="AudioStreamPlayer" parent="Screen Center"]
 
 [node name="MusicDelay" type="Timer" parent="Screen Center"]
-wait_time = 0.3
+wait_time = 4.45
 one_shot = true
 
 [node name="Accuracy" type="Label" parent="."]

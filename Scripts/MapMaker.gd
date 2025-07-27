@@ -42,6 +42,9 @@ func _on_continue_button_pressed():
 		writer.close()
 		
 		# Move to the next screen
+		
+		Global.mapTitle = mapName
+		
 		get_tree().change_scene_to_file("res://Prefabs/MapMaker.tscn")
 	else:
 	# If the file already exists, Warn the user

@@ -19,7 +19,7 @@ func _physics_process(_delta):
 
 func _on_beat_timer_timeout():
 	beat += 1
-	map.append(0)
+	map.append(null)
 	$BeatTimer.start()
 
 func _on_music_player_finished():
@@ -30,8 +30,6 @@ func _on_music_player_finished():
 	var parseMapData = JSON.parse_string(mapString)
 	var mapOld = parseMapData
 	map.insert(0, mapOld[0])
-	for i in range(9):
-		map.insert(1, 0)
 	
 	var musicfile = reader.read_file("music.mp3")
 	
