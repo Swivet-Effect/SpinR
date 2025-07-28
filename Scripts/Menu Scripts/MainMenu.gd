@@ -1,10 +1,16 @@
 extends Control
 
-func _on_debug_button_pressed():
+func QuitButtonPressed():
+	get_tree().quit()
+
+func OptionsButtonPressed():
+	get_tree().change_scene_to_file(Global.optionsMenu)
+
+func PlayButtonPressed():
 	get_tree().change_scene_to_file(Global.mapSelection)
 
-func _on_map_maker_button_pressed():
+func MapMakerButtonPressed():
 	get_tree().change_scene_to_file(Global.mapNamer)
 
-func _on_practice_button_pressed():
+func PracticeButtonPressed():
 	get_tree().change_scene_to_file(Global.practiceMode)

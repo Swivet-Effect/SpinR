@@ -11,6 +11,7 @@ var mapMaker = "res://Scenes/Gameplay/MapMaker.tscn"
 var practiceMode = "res://Scenes/Gameplay/PracticeMode.tscn"
 var mapSelection = "res://Scenes/Menus/MapSelectionScreen.tscn"
 var mapNamer = "res://Scenes/Menus/MapNamer.tscn"
+var optionsMenu = "res://Scenes/Menus/OptionsMenu.tscn"
 
 # Map Settings ----------
 var mapTitle

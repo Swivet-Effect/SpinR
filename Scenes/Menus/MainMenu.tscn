@@ -31,6 +31,7 @@ offset_bottom = 117.0
 color = Color(0.129412, 0.145098, 0.176471, 1)
 
 [node name="SPIN" type="Label" parent="CanvasLayer/R"]
+layout_mode = 0
 offset_left = -34.0
 offset_right = 273.0
 offset_bottom = 146.0
@@ -84,6 +85,8 @@ text = "Quit"
 flat = true
 alignment = 0
 
-[connection signal="pressed" from="CanvasLayer/Buttons/MapsButton" to="." method="_on_debug_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/MapMakerButton" to="." method="_on_map_maker_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/PracticeButton" to="." method="_on_practice_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/MapsButton" to="." method="PlayButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/MapMakerButton" to="." method="MapMakerButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/PracticeButton" to="." method="PracticeButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Options Button" to="." method="OptionsButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Quit Button" to="." method="QuitButtonPressed"]
