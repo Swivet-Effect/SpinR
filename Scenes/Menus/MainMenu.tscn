@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://djckbjv7x1ve5"]
+
+[ext_resource type="Script" uid="uid://174okntt0ofd" path="res://Scripts/Menu Scripts/MainMenu.gd" id="1_qwwyl"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qwwyl")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="R" type="Label" parent="CanvasLayer"]
+offset_left = 114.0
+offset_top = 321.0
+offset_right = 421.0
+offset_bottom = 467.0
+theme_override_colors/font_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 106
+text = "SPINR"
+horizontal_alignment = 1
+
+[node name="Hide Text" type="ColorRect" parent="CanvasLayer/R"]
+layout_mode = 0
+offset_top = 35.0
+offset_right = 234.0
+offset_bottom = 117.0
+color = Color(0.129412, 0.145098, 0.176471, 1)
+
+[node name="SPIN" type="Label" parent="CanvasLayer/R"]
+offset_left = -34.0
+offset_right = 273.0
+offset_bottom = 146.0
+theme_override_font_sizes/font_size = 106
+text = "SPIN"
+horizontal_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
+offset_left = 480.0
+offset_top = 276.0
+offset_right = 652.0
+offset_bottom = 542.0
+
+[node name="MapsButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Play Map"
+flat = true
+alignment = 0
+
+[node name="MapMakerButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Map Maker"
+flat = true
+alignment = 0
+
+[node name="PracticeButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Practice"
+flat = true
+alignment = 0
+
+[node name="Options Button" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Options"
+flat = true
+alignment = 0
+
+[node name="Quit Button" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+flat = true
+alignment = 0
+
+[connection signal="pressed" from="CanvasLayer/Buttons/MapsButton" to="." method="_on_debug_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/MapMakerButton" to="." method="_on_map_maker_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/PracticeButton" to="." method="_on_practice_button_pressed"]

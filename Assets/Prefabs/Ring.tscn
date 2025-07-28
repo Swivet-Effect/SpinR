@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://c31tul7x5job1"]
+
+[ext_resource type="Script" uid="uid://clsvu37ob0sj1" path="res://Scripts/PlayerControl.gd" id="1_8r53i"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qodq2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kypdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1f0n0"]
+size = Vector2(1.03223, 1.14286)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1f0n0"]
+radius = 119.708
+
+[node name="Ring" type="Node2D"]
+
+[node name="Ring Outer" type="MeshInstance2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(256.79, 256.79)
+mesh = SubResource("SphereMesh_qodq2")
+
+[node name="Ring Inner" type="MeshInstance2D" parent="Ring Outer"]
+modulate = Color(0.129412, 0.145098, 0.176471, 1)
+position = Vector2(0, 1.11022e-16)
+scale = Vector2(0.978628, 0.978628)
+mesh = SubResource("SphereMesh_qodq2")
+
+[node name="Pivot Point" type="Marker2D" parent="."]
+rotation = -1.5708
+scale = Vector2(32.25, 12.25)
+script = ExtResource("1_8r53i")
+
+[node name="Hitter" type="MeshInstance2D" parent="Pivot Point"]
+modulate = Color(0.822746, 0.822746, 0, 1)
+position = Vector2(3.96899, 3.78489e-05)
+rotation = 1.5708
+scale = Vector2(4.58688, 0.379844)
+mesh = SubResource("BoxMesh_kypdp")
+
+[node name="Hitter Area" type="Area2D" parent="Pivot Point/Hitter" groups=["player"]]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Pivot Point/Hitter/Hitter Area"]
+position = Vector2(0.000549331, -1.43051e-05)
+shape = SubResource("RectangleShape2D_1f0n0")
+
+[node name="Missed Area" type="Area2D" parent="." groups=["Missed"]]
+
+[node name="Hitbox" type="CollisionShape2D" parent="Missed Area"]
+shape = SubResource("CircleShape2D_1f0n0")

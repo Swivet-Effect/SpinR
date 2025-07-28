@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://swp6joc5oy07"]
+
+[ext_resource type="Script" uid="uid://bevtcakdhf3u" path="res://Scripts/Map Maker Scripts/MapMaker.gd" id="1_gxdgs"]
+
+[node name="MapNamer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gxdgs")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="NameInput" type="TextEdit" parent="CanvasLayer"]
+offset_left = 211.0
+offset_top = 439.0
+offset_right = 586.0
+offset_bottom = 490.0
+placeholder_text = "Map Name"
+
+[node name="ContinueButton" type="Button" parent="CanvasLayer"]
+offset_left = 585.0
+offset_top = 552.0
+offset_right = 725.0
+offset_bottom = 603.0
+theme_override_font_sizes/font_size = 25
+text = "Continue"
+
+[node name="Warning" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 279.0
+offset_top = 454.0
+offset_right = 510.0
+offset_bottom = 491.0
+theme_override_font_sizes/font_size = 25
+text = "Map Already Exists"
+
+[node name="Back Button" type="Button" parent="CanvasLayer"]
+offset_left = 94.0
+offset_top = 546.0
+offset_right = 193.0
+offset_bottom = 596.0
+theme_override_font_sizes/font_size = 20
+text = "< Back"
+
+[node name="AudioLoader" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/ContinueButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Back Button" to="." method="_on_back_button_pressed"]
