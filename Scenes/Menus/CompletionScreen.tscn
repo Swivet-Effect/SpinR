@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cy7oosakummxq"]
+
+[ext_resource type="Script" uid="uid://ds6rhdbjw53j7" path="res://Scripts/Menu Scripts/CompletionScreen.gd" id="1_5jnta"]
+
+[node name="Completion Screen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5jnta")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Accuracy Text" type="Label" parent="CanvasLayer"]
+offset_left = 150.0
+offset_top = 438.0
+offset_right = 288.0
+offset_bottom = 473.0
+theme_override_font_sizes/font_size = 25
+text = "- Accuracy -"
+
+[node name="Accuracy" type="Label" parent="CanvasLayer/Accuracy Text"]
+layout_mode = 0
+offset_left = -40.0
+offset_top = -121.0
+offset_right = 179.0
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 85
+horizontal_alignment = 1
+
+[node name="Continue" type="Button" parent="CanvasLayer"]
+offset_left = 395.0
+offset_top = 338.0
+offset_right = 685.0
+offset_bottom = 425.0
+theme_override_font_sizes/font_size = 35
+text = "To Main Menu"
+
+[connection signal="pressed" from="CanvasLayer/Continue" to="." method="_on_continue_pressed"]

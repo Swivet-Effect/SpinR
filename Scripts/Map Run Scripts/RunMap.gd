@@ -40,4 +40,4 @@ func _on_music_delay_timeout():
 	audioPlayer.play()
 
 func _on_music_player_finished():
-	get_tree().change_scene_to_file(Global.mapSelection)
+	get_tree().change_scene_to_file(Global.completionScreen)

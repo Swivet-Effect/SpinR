@@ -90,4 +90,5 @@ script = ExtResource("4_glvyh")
 
 [connection signal="pressed" from="Game Camera/UI/Screen Darken/Restart Button" to="Game Camera/UI" method="_on_button_pressed"]
 [connection signal="finished" from="Screen Center/Music Player" to="Screen Center" method="_on_music_player_finished"]
+[connection signal="finished" from="Screen Center/Music Player" to="Accuracy" method="_on_music_player_finished"]
 [connection signal="timeout" from="Screen Center/MusicDelay" to="Screen Center" method="_on_music_delay_timeout"]
