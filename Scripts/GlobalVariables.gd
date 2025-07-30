@@ -2,6 +2,7 @@ extends Node
 
 # Game Settings ---------
 var inputType = "mouse"
+var volume = 100.0
 
 # Scene Links
 var mainMenu = "res://Scenes/Menus/MainMenu.tscn"

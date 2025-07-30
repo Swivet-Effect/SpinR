@@ -10,3 +10,9 @@ func InputMethodChanged(index):
 		Global.inputType = "controller"
 	else:
 		Global.inputType = "mouse"
+
+func SliderMoved(value: float) -> void:
+	Global.volume = value
+
+func _ready():
+	$"CanvasLayer/Volume Slider".value = Global.volume

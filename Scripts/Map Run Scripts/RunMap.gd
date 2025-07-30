@@ -45,6 +45,7 @@ func _ready():
 	move()
 
 func _on_music_delay_timeout():
+	audioPlayer.volume_linear = Global.volume / 100.0
 	audioPlayer.play()
 
 func _physics_process(_delta):

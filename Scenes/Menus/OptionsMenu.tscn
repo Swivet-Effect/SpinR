@@ -43,5 +43,22 @@ offset_bottom = 36.0
 theme_override_font_sizes/font_size = 25
 text = "Input Method:"
 
+[node name="Volume Slider" type="HSlider" parent="CanvasLayer"]
+offset_left = 409.0
+offset_top = 219.0
+offset_right = 675.0
+offset_bottom = 246.0
+value = 100.0
+
+[node name="Text" type="Label" parent="CanvasLayer/Volume Slider"]
+layout_mode = 0
+offset_left = -137.0
+offset_top = -10.0
+offset_right = -38.0
+offset_bottom = 25.0
+theme_override_font_sizes/font_size = 25
+text = "Volume:"
+
 [connection signal="pressed" from="CanvasLayer/Back Button" to="." method="BackButtonPressed"]
 [connection signal="item_selected" from="CanvasLayer/Control Changer" to="." method="InputMethodChanged"]
+[connection signal="value_changed" from="CanvasLayer/Volume Slider" to="." method="SliderMoved"]
