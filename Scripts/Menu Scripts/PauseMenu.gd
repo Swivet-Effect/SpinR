@@ -5,16 +5,10 @@ extends Control
 func _input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == KEY_ESCAPE:
-			if $CanvasLayer.visible == false:
-				$CanvasLayer.visible = true
-				Global.playing = false
-				if music_node != null:
-					music_node.stream_paused = true
-			elif $CanvasLayer.visible == true:
-				$CanvasLayer.visible = false
-				Global.playing = true
-				if music_node != null:
-					music_node.stream_paused = false
+			$CanvasLayer.visible = !$CanvasLayer.visible
+			Global.playing = !Global.playing
+			if music_node != null:
+				music_node.stream_paused = !music_node.stream_paused
 
 func RestartButton() -> void:
 	Global.failedCheck = 0
@@ -30,7 +24,17 @@ func OptionsButton() -> void:
 	pass
 
 func ToMenuButton() -> void:
-	get_tree().change_scene_to_file(Global.mapSelection)
+	Global.reset = true
+	if Global.isPractice == true:
+		get_tree().change_scene_to_file(Global.mainMenu)
+	else:
+		get_tree().change_scene_to_file(Global.mapSelection)
 
 func QuitButton() -> void:
 	get_tree().quit()
+
+func _ready():
+	if Global.isPractice == false:
+		$CanvasLayer/PauseBox/StraightenMenu/Restart.visible = true
+	else:
+		$CanvasLayer/PauseBox/StraightenMenu/Restart.visible = false

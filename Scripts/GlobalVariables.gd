@@ -5,6 +5,7 @@ var inputType = "mouse"
 var volume = 100.0
 
 # Scene Links
+var destination : String
 var mainMenu = "res://Scenes/Menus/MainMenu.tscn"
 var loadScreen = "res://Scenes/Menus/LoadScreen.tscn"
 var mapRunner = "res://Scenes/Gameplay/RunMap.tscn"
@@ -28,6 +29,8 @@ var failedCheck = 0
 var accuracy : String
 var pausable = true
 var playing = true
+var isPractice = true
+var fireRate = 10
 
 # Map Maker Variables ---
 var playerRot

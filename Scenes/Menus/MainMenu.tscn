@@ -28,7 +28,7 @@ layout_mode = 0
 offset_top = 35.0
 offset_right = 234.0
 offset_bottom = 117.0
-color = Color(0.129412, 0.145098, 0.176471, 1)
+color = Color(0.027451, 0.0352941, 0.0470588, 1)
 
 [node name="SPIN" type="Label" parent="CanvasLayer/R"]
 layout_mode = 0

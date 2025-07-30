@@ -13,7 +13,7 @@ config_version=5
 config/name="SpinR"
 run/main_scene="uid://djckbjv7x1ve5"
 config/features=PackedStringArray("4.4", "Forward Plus")
-boot_splash/bg_color=Color(0.129412, 0.145098, 0.176471, 1)
+boot_splash/bg_color=Color(0.0279469, 0.0340673, 0.0479376, 1)
 
 [autoload]
 
@@ -78,4 +78,4 @@ s={
 
 [rendering]
 
-environment/defaults/default_clear_color=Color(0.129412, 0.145098, 0.176471, 1)
+environment/defaults/default_clear_color=Color(0.0383223, 0.0486185, 0.0622593, 1)

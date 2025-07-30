@@ -10,7 +10,7 @@ var rng = RandomNumberGenerator.new()
 func fire():
 	look_at(pointer.global_position)
 	if Global.playing:
-		doFire = rng.randi_range(0,10)
+		doFire = rng.randi_range(0,Global.fireRate)
 	else:
 		doFire = 1
 		

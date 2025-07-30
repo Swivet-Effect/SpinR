@@ -10,4 +10,5 @@ func move():
 func _ready():
 	Global.speed = 100
 	Global.reset = false
+	Global.playing = true
 	move()

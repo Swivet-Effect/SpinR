@@ -42,6 +42,7 @@ text = "Restart"
 flat = true
 
 [node name="Options" type="Button" parent="CanvasLayer/PauseBox/StraightenMenu"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
 theme_override_font_sizes/font_size = 25
