@@ -4,11 +4,15 @@ extends Node2D
 @onready var reload_timer = $"Reload Timer"
 @onready var main = get_tree().get_root()
 @onready var projectile = load("res://Assets/Prefabs/Orb.tscn")
+var doFire
 var rng = RandomNumberGenerator.new()
 
 func fire():
 	look_at(pointer.global_position)
-	var doFire = rng.randi_range(0,10)
+	if Global.playing:
+		doFire = rng.randi_range(0,10)
+	else:
+		doFire = 1
 		
 	if doFire == 0:
 		var instance = projectile.instantiate()

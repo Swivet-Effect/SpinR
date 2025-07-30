@@ -16,7 +16,7 @@ var completionScreen = "res://Scenes/Menus/CompletionScreen.tscn"
 
 # Map Settings ----------
 var mapTitle
-var speed : String
+var speed : int
 var reset = true
 
 # Map Run Variables
@@ -24,7 +24,9 @@ var beat = 1
 var hitOrbs = 0.00
 var totalOrbs = 0.00
 var failedCheck = 0
-var accuracy : int
+var accuracy : String
+var pausable = true
+var playing = true
 
 # Map Maker Variables ---
 var playerRot

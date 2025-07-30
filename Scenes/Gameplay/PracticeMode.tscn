@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://gkgrwjq4mis8"]
+[gd_scene load_steps=5 format=3 uid="uid://gkgrwjq4mis8"]
 
 [ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Assets/Prefabs/Ring.tscn" id="1_hrx06"]
 [ext_resource type="Script" uid="uid://csrp547fu5ao8" path="res://Scripts/Practice Mode Scripts/PracticeModeRunner.gd" id="2_lutck"]
 [ext_resource type="PackedScene" uid="uid://qtc5q6kwpmp4" path="res://Assets/Prefabs/PracticeFirer.tscn" id="2_sv0mf"]
+[ext_resource type="PackedScene" uid="uid://bgndkiin8jes1" path="res://Assets/Prefabs/PauseMenu.tscn" id="4_k0nc8"]
 
 [node name="Practice Mode" type="Node2D"]
 
@@ -15,3 +16,5 @@ script = ExtResource("2_lutck")
 
 [node name="Practice Firer" parent="Screen Center" instance=ExtResource("2_sv0mf")]
 position = Vector2(0, 600)
+
+[node name="Pause Menu" parent="." instance=ExtResource("4_k0nc8")]

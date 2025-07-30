@@ -46,4 +46,5 @@ func _on_music_player_finished():
 	writer.start_file("music.mp3")
 	writer.write_file(musicfile)
 	writer.close()
+	get_tree().change_scene_to_file(Global.mainMenu)
 	

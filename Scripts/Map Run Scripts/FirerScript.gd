@@ -17,5 +17,5 @@ func fire():
 
 	reload_timer.start()
 
-func _on_reload_timer_timeout() -> void:
+func _on_reload_timer_timeout():
 	pointer.move()

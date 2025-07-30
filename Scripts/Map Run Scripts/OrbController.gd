@@ -16,23 +16,23 @@ func _physics_process(_delta):
 	
 	velocity = Vector2(Global.speed, 0).rotated(dir)
 # Only move orb if player hasn't failed
-	if Global.failedCheck < 5:
+	if Global.playing == true:
 		move_and_slide()
 
-func _on_area_2d_area_entered(area: Area2D):
+func _on_area_2d_area_entered(area: Area2D):	
 	if area.is_in_group("player"):
-		Global.failedCheck = 0
-		Global.totalOrbs += 1
-		Global.hitOrbs += 1
-		$Graphic.visible = false
 		$"Collision Detection".set_deferred("monitoring", false)
+		$Graphic.visible = false
+		Global.totalOrbs += 1.0
+		Global.failedCheck = 0
+		Global.hitOrbs += 1.0
 		$"Explosion Effect".emitting = true
 
 	if area.is_in_group("Missed"):
-		Global.failedCheck += 1
-		Global.totalOrbs += 1
-		$Graphic.visible = false
 		$"Collision Detection".set_deferred("monitoring", false)
+		$Graphic.visible = false
+		Global.totalOrbs += 1.0
+		Global.failedCheck += 1
 		$"Red Flash".visible = true
 		$"Red Flash/Flash Timer".start()
 

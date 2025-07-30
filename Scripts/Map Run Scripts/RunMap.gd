@@ -3,6 +3,7 @@ extends Marker2D
 @onready var audioPlayer = $"Music Player"
 @onready var firer = $Firer
 
+var mapNoNulls
 var map = {}
 var userPath = OS.get_data_dir()
 var map_file_path = userPath + "/SpinR/" + Global.mapTitle + ".spr"
@@ -12,7 +13,8 @@ func move():
 		if map[Global.beat] != null:
 			rotation_degrees = map[Global.beat]
 		firer.fire()
-		Global.beat += 1
+		if Global.playing == true:
+			Global.beat += 1
 
 func _ready():
 	var reader = ZIPReader.new()
@@ -28,7 +30,13 @@ func _ready():
 	reader.close()
 	
 	Global.speed = map[0]["speed"]
+	Global.beat = 1
 	Global.reset = false
+	Global.playing = true
+	Global.totalOrbs = 0.0
+	Global.hitOrbs = 0.0
+	
+	mapNoNulls = map.size() - map.count(null) - 1
 	
 	audioPlayer.stream = music
 	
@@ -39,5 +47,6 @@ func _ready():
 func _on_music_delay_timeout():
 	audioPlayer.play()
 
-func _on_music_player_finished():
-	get_tree().change_scene_to_file(Global.completionScreen)
+func _physics_process(_delta):
+	if Global.totalOrbs == float(mapNoNulls):
+		get_tree().change_scene_to_file(Global.completionScreen)
