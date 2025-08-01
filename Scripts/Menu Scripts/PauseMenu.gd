@@ -26,9 +26,11 @@ func OptionsButton() -> void:
 func ToMenuButton() -> void:
 	Global.reset = true
 	if Global.isPractice == true:
-		get_tree().change_scene_to_file(Global.mainMenu)
+		Global.destination = "Menu"
+		get_tree().change_scene_to_file(Global.loadScreen)
 	else:
-		get_tree().change_scene_to_file(Global.mapSelection)
+		Global.destination = "Selection"
+		get_tree().change_scene_to_file(Global.loadScreen)
 
 func QuitButton() -> void:
 	get_tree().quit()

@@ -16,13 +16,13 @@ radius = 119.708
 
 [node name="Ring Outer" type="MeshInstance2D" parent="."]
 position = Vector2(1, 0)
-scale = Vector2(256.79, 256.79)
+scale = Vector2(256, 256)
 mesh = SubResource("SphereMesh_qodq2")
 
 [node name="Ring Inner" type="MeshInstance2D" parent="Ring Outer"]
 modulate = Color(0.027451, 0.0352941, 0.0470588, 1)
 position = Vector2(0, 1.11022e-16)
-scale = Vector2(0.978628, 0.978628)
+scale = Vector2(0.99, 0.99)
 mesh = SubResource("SphereMesh_qodq2")
 
 [node name="Pivot Point" type="Marker2D" parent="."]
@@ -34,7 +34,7 @@ script = ExtResource("1_8r53i")
 modulate = Color(1, 0.745098, 0, 1)
 position = Vector2(3.90698, 3.72342e-05)
 rotation = 1.5708
-scale = Vector2(4.5, 0.35)
+scale = Vector2(3.75, 0.25)
 mesh = SubResource("BoxMesh_kypdp")
 
 [node name="Hitter Area" type="Area2D" parent="Pivot Point/Hitter" groups=["player"]]

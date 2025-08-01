@@ -50,4 +50,5 @@ func _on_music_delay_timeout():
 
 func _physics_process(_delta):
 	if Global.totalOrbs == float(mapNoNulls):
-		get_tree().change_scene_to_file(Global.completionScreen)
+		Global.destination = "Completion"
+		get_tree().change_scene_to_file(Global.loadScreen)
