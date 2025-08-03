@@ -74,20 +74,31 @@ text = "RETRY"
 script = ExtResource("2_5flaf")
 
 [node name="Firer" parent="Screen Center" instance=ExtResource("3_5ixmr")]
-position = Vector2(600, 0)
+position = Vector2(567, 0)
 
 [node name="Music Player" type="AudioStreamPlayer" parent="Screen Center"]
 
 [node name="MusicDelay" type="Timer" parent="Screen Center"]
-wait_time = 4.45
+wait_time = 4.38
 one_shot = true
 
 [node name="Accuracy" type="Label" parent="."]
+visible = false
 offset_left = -20.0
 offset_top = -11.0
 offset_right = 20.0
 offset_bottom = 12.0
 script = ExtResource("4_glvyh")
+
+[node name="StartCountdown" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -48.0
+offset_right = 21.0
+offset_bottom = 49.0
+theme_override_font_sizes/font_size = 71
+horizontal_alignment = 1
+
+[node name="CountdownTimer" type="Timer" parent="StartCountdown"]
 
 [node name="Pause Menu" parent="." instance=ExtResource("6_8povf")]
 
@@ -95,3 +106,4 @@ script = ExtResource("4_glvyh")
 [connection signal="finished" from="Screen Center/Music Player" to="Screen Center" method="_on_music_player_finished"]
 [connection signal="finished" from="Screen Center/Music Player" to="Accuracy" method="_on_music_player_finished"]
 [connection signal="timeout" from="Screen Center/MusicDelay" to="Screen Center" method="_on_music_delay_timeout"]
+[connection signal="timeout" from="StartCountdown/CountdownTimer" to="Screen Center" method="CountdownTimerOut"]

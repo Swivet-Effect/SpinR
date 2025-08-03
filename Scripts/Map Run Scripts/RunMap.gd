@@ -8,6 +8,8 @@ var map = {}
 var userPath = OS.get_data_dir()
 var map_file_path = userPath + "/SpinR/" + Global.mapTitle + ".spr"
 
+var countdown
+
 func move():
 	if Global.beat < map.size():
 		if map[Global.beat] != null:
@@ -28,7 +30,6 @@ func _ready():
 	var music = AudioStreamMP3.load_from_buffer(musicfile)
 	
 	reader.close()
-	
 	Global.speed = map[0]["speed"]
 	Global.beat = 1
 	Global.reset = false
@@ -43,6 +44,10 @@ func _ready():
 	$MusicDelay.start()
 	
 	move()
+	
+	countdown = 3
+	$"../StartCountdown".text = str(countdown)
+	$"../StartCountdown/CountdownTimer".start()
 
 func _on_music_delay_timeout():
 	audioPlayer.volume_linear = Global.volume / 100.0
@@ -52,3 +57,12 @@ func _physics_process(_delta):
 	if Global.totalOrbs == float(mapNoNulls):
 		Global.destination = "Completion"
 		get_tree().change_scene_to_file(Global.loadScreen)
+
+func CountdownTimerOut():
+	countdown -= 1
+	if countdown != 0:
+		$"../StartCountdown".text = str(countdown)
+		$"../StartCountdown/CountdownTimer".start()
+	else:
+		$"../StartCountdown".visible = false
+		$"../Accuracy".visible = true
