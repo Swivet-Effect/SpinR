@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv3s8tdush6ny"]
+
+[ext_resource type="Script" uid="uid://biqpggc8hixt6" path="res://Scripts/Map Maker Scripts/SelectBeat.gd" id="1_hf7mh"]
+
+[node name="NoBeat" type="Button"]
+text = "[ ]"
+script = ExtResource("1_hf7mh")
+
+[connection signal="pressed" from="." to="." method="WhenPressed"]

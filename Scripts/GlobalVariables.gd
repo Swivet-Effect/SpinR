@@ -34,3 +34,6 @@ var fireRate = 10
 
 # Map Maker Variables ---
 var playerRot
+var currentBeat = 0
+var previousBeat = 0
+var beatAngle = 0

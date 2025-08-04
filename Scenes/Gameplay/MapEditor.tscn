@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca0yxglrhy6rf"]
+
+[ext_resource type="Script" uid="uid://qv247rvdmpwg" path="res://Scripts/Menu Scripts/MapEditTimeline.gd" id="2_edopk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_edopk"]
+bg_color = Color(1, 1, 1, 1)
+
+[node name="Map Editor" type="Node2D"]
+
+[node name="Game Camera" type="Camera2D" parent="."]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+offset_left = -395.0
+offset_top = 358.0
+offset_right = 395.0
+offset_bottom = 393.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+script = ExtResource("2_edopk")
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -390.0
+offset_top = 311.0
+offset_right = -102.0
+offset_bottom = 357.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_edopk")
+
+[node name="TextEdit" type="TextEdit" parent="Panel"]
+layout_mode = 0
+offset_left = 58.0
+offset_right = 222.0
+offset_bottom = 46.0
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 11.0
+offset_right = 51.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 225.0
+offset_top = 8.0
+offset_right = 277.0
+offset_bottom = 39.0
+text = "Done"
+
+[connection signal="pressed" from="Panel/Button" to="ScrollContainer/HBoxContainer" method="DoneEditing"]
