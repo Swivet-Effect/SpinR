@@ -8,7 +8,6 @@ var map = {}
 
 var beats = 100
 
-
 func _ready():
 	var reader = ZIPReader.new()
 	reader.open(TEMPPATH)
@@ -34,3 +33,24 @@ func _physics_process(_delta):
 
 func DoneEditing():
 	Global.beatAngle = $"../../Panel/TextEdit".get_text()
+
+func SaveMap():
+	var reader = ZIPReader.new()
+	reader.open(TEMPPATH)
+	
+	var musicfile = reader.read_file("music.mp3")
+	
+	reader.close()
+	
+	var writer = ZIPPacker.new()
+	
+	writer.open(TEMPPATH)
+	writer.start_file("map.json")
+	var mapJson = JSON.stringify(map)
+	var mapConv = mapJson.to_utf8_buffer()
+	writer.write_file(mapConv)
+	writer.close_file()
+	writer.start_file("music.mp3")
+	writer.write_file(musicfile)
+	writer.close()
+	get_tree().change_scene_to_file(Global.mainMenu)
