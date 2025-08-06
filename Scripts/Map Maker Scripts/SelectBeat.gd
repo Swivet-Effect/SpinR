@@ -1,6 +1,6 @@
 extends Button
 
-@export var index = 0
+var index
 
 func WhenPressed():
 	Global.previousBeat = Global.currentBeat
@@ -9,4 +9,7 @@ func WhenPressed():
 
 func _physics_process(_delta):
 	if index == Global.currentBeat:
-		$".".text = str(Global.beatAngle)
+		if Global.beatAngle != null:
+			$".".text = str(Global.beatAngle)
+		else:
+			$".".text = "[ ]"

@@ -2,21 +2,24 @@ extends HBoxContainer
 
 var button = load("res://Assets/Prefabs/NoBeat.tscn")
 
-var TEMPPATH = ("C:/Users/dyfry/AppData/Roaming/SpinR/Test1.spr")
+var userPath = OS.get_data_dir()
+var filePath = userPath + "/SpinR/" + Global.mapTitle + ".spr"
 
 var map = {}
 
-var beats = 100
+var beats
 
 func _ready():
 	var reader = ZIPReader.new()
-	reader.open(TEMPPATH)
+	reader.open(filePath)
 	var mapRawData = reader.read_file("map.json")
 	var mapString = mapRawData.get_string_from_utf8()
 	var parseMapData = JSON.parse_string(mapString)
 	map = parseMapData
 	
 	reader.close()
+	
+	beats = map.size() - 1
 	
 	for i in range(beats):
 		var instance = button.instantiate()
@@ -27,16 +30,12 @@ func _ready():
 
 func _physics_process(_delta):
 	if Global.currentBeat != Global.previousBeat:
-		$"../../Panel/Label".text = str(Global.currentBeat*0.1)
-		$"../../Panel/TextEdit".set_text(str(map[Global.currentBeat + 1]))
+		$"../../Panel/Time".text = str(Global.currentBeat*0.1) + " s"
 		Global.previousBeat = Global.currentBeat
-
-func DoneEditing():
-	Global.beatAngle = $"../../Panel/TextEdit".get_text()
 
 func SaveMap():
 	var reader = ZIPReader.new()
-	reader.open(TEMPPATH)
+	reader.open(filePath)
 	
 	var musicfile = reader.read_file("music.mp3")
 	
@@ -44,7 +43,7 @@ func SaveMap():
 	
 	var writer = ZIPPacker.new()
 	
-	writer.open(TEMPPATH)
+	writer.open(filePath)
 	writer.start_file("map.json")
 	var mapJson = JSON.stringify(map)
 	var mapConv = mapJson.to_utf8_buffer()
@@ -54,3 +53,6 @@ func SaveMap():
 	writer.write_file(musicfile)
 	writer.close()
 	get_tree().change_scene_to_file(Global.mainMenu)
+
+func ClearButtonPressed():
+	Global.beatAngle = null

@@ -18,3 +18,7 @@ func PracticeButtonPressed():
 	Global.destination = "Practice"
 	Global.isPractice = true
 	get_tree().change_scene_to_file(Global.loadScreen)
+
+func MapEditorButton():
+	Global.destination = "Editor"
+	get_tree().change_scene_to_file(Global.mapSelection)

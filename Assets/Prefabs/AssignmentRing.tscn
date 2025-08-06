@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=3 uid="uid://biiucx1xcybv8"]
+
+[ext_resource type="Script" uid="uid://c5g88ea8gbsfx" path="res://Scripts/Map Maker Scripts/AngleSetter.gd" id="1_lpfg7"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qodq2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_kypdp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lpfg7"]
+size = Vector2(3.59691, 12.1632)
+
+[node name="Ring" type="Node2D"]
+
+[node name="Ring Outer" type="MeshInstance2D" parent="."]
+position = Vector2(1, 0)
+scale = Vector2(256, 256)
+mesh = SubResource("SphereMesh_qodq2")
+
+[node name="Ring Inner" type="MeshInstance2D" parent="Ring Outer"]
+modulate = Color(0.027451, 0.0352941, 0.0470588, 1)
+position = Vector2(0, 1.11022e-16)
+scale = Vector2(0.99, 0.99)
+mesh = SubResource("SphereMesh_qodq2")
+
+[node name="Pivot Point" type="Marker2D" parent="."]
+rotation = -1.5708
+scale = Vector2(32.25, 12.25)
+script = ExtResource("1_lpfg7")
+
+[node name="Hitter" type="MeshInstance2D" parent="Pivot Point"]
+modulate = Color(1, 0.745098, 0, 1)
+position = Vector2(3.90698, 3.72342e-05)
+rotation = 1.5708
+scale = Vector2(3.75, 0.25)
+mesh = SubResource("BoxMesh_kypdp")
+
+[node name="Area2D" type="Area2D" parent="Pivot Point"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot Point/Area2D"]
+position = Vector2(3.90698, 3.7238e-05)
+shape = SubResource("RectangleShape2D_lpfg7")
+
+[connection signal="mouse_entered" from="Pivot Point/Area2D" to="Pivot Point" method="MouseOver"]
+[connection signal="mouse_exited" from="Pivot Point/Area2D" to="Pivot Point" method="MouseAway"]

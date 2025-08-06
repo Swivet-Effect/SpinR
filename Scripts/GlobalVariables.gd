@@ -15,6 +15,7 @@ var mapSelection = "res://Scenes/Menus/MapSelectionScreen.tscn"
 var mapNamer = "res://Scenes/Menus/MapNamer.tscn"
 var optionsMenu = "res://Scenes/Menus/OptionsMenu.tscn"
 var completionScreen = "res://Scenes/Menus/CompletionScreen.tscn"
+var editorScreen = "res://Scenes/Gameplay/MapEditor.tscn"
 
 # Map Settings ----------
 var mapTitle
@@ -31,9 +32,10 @@ var pausable = true
 var playing = true
 var isPractice = true
 var fireRate = 10
+var edit : bool
 
 # Map Maker Variables ---
 var playerRot
 var currentBeat = 0
 var previousBeat = 0
-var beatAngle = 0
+var beatAngle

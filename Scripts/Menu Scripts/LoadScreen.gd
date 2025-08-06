@@ -12,5 +12,7 @@ func _on_timer_timeout():
 			get_tree().change_scene_to_file(Global.mainMenu)
 		"Completion":
 			get_tree().change_scene_to_file(Global.completionScreen)
+		"Editor":
+			get_tree().change_scene_to_file(Global.editorScreen)
 		_:
 			pass

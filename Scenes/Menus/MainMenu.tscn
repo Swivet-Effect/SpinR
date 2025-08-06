@@ -40,10 +40,10 @@ text = "SPIN"
 horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 480.0
-offset_top = 276.0
-offset_right = 652.0
-offset_bottom = 542.0
+offset_left = 487.0
+offset_top = 252.0
+offset_right = 663.0
+offset_bottom = 572.0
 
 [node name="MapsButton" type="Button" parent="CanvasLayer/Buttons"]
 layout_mode = 2
@@ -57,7 +57,15 @@ alignment = 0
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
 theme_override_font_sizes/font_size = 30
-text = "Map Maker"
+text = "Create Map"
+flat = true
+alignment = 0
+
+[node name="MapEditorButton" type="Button" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Edit Map"
 flat = true
 alignment = 0
 
@@ -87,6 +95,7 @@ alignment = 0
 
 [connection signal="pressed" from="CanvasLayer/Buttons/MapsButton" to="." method="PlayButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/MapMakerButton" to="." method="MapMakerButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/MapEditorButton" to="." method="MapEditorButton"]
 [connection signal="pressed" from="CanvasLayer/Buttons/PracticeButton" to="." method="PracticeButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Options Button" to="." method="OptionsButtonPressed"]
 [connection signal="pressed" from="CanvasLayer/Buttons/Quit Button" to="." method="QuitButtonPressed"]
