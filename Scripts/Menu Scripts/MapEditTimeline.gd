@@ -32,6 +32,7 @@ func _physics_process(_delta):
 	if Global.currentBeat != Global.previousBeat:
 		$"../../Panel/Time".text = str(Global.currentBeat*0.1) + " s"
 		Global.previousBeat = Global.currentBeat
+	map[Global.currentBeat + 1] = Global.beatAngle
 
 func SaveMap():
 	var reader = ZIPReader.new()
