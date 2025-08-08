@@ -57,3 +57,7 @@ func SaveMap():
 
 func ClearButtonPressed():
 	Global.beatAngle = null
+
+func ExitButtonPressed() -> void:
+	Global.destination = "Menu"
+	get_tree().change_scene_to_file(Global.loadScreen)

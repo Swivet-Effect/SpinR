@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bwkf3m3y3p4rb"]
+[gd_scene load_steps=10 format=3 uid="uid://bwkf3m3y3p4rb"]
 
 [ext_resource type="Script" uid="uid://c3xfc0j30yegr" path="res://Scripts/Menu Scripts/FailureScreen.gd" id="1_5flaf"]
 [ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Assets/Prefabs/Ring.tscn" id="1_sx3po"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bjhf3c5shdody" path="res://Assets/Prefabs/Firer.tscn" id="3_5ixmr"]
 [ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/Map Run Scripts/AccuracyScript.gd" id="4_glvyh"]
 [ext_resource type="PackedScene" uid="uid://bgndkiin8jes1" path="res://Assets/Prefabs/PauseMenu.tscn" id="6_8povf"]
+[ext_resource type="PackedScene" uid="uid://fnu52a3w3uqs" path="res://Assets/Prefabs/Side Bars.tscn" id="7_aqbut"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sx3po"]
 bg_color = Color(0.585847, 1.8049e-06, 4.33177e-07, 1)
@@ -101,6 +102,8 @@ horizontal_alignment = 1
 [node name="CountdownTimer" type="Timer" parent="StartCountdown"]
 
 [node name="Pause Menu" parent="." instance=ExtResource("6_8povf")]
+
+[node name="SideBars" parent="." instance=ExtResource("7_aqbut")]
 
 [connection signal="pressed" from="Game Camera/UI/Screen Darken/Restart Button" to="Game Camera/UI" method="_on_button_pressed"]
 [connection signal="finished" from="Screen Center/Music Player" to="Screen Center" method="_on_music_player_finished"]

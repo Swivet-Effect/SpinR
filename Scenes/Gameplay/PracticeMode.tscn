@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gkgrwjq4mis8"]
+[gd_scene load_steps=8 format=3 uid="uid://gkgrwjq4mis8"]
 
 [ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Assets/Prefabs/Ring.tscn" id="1_hrx06"]
 [ext_resource type="Script" uid="uid://csrp547fu5ao8" path="res://Scripts/Practice Mode Scripts/PracticeModeRunner.gd" id="2_lutck"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/Map Run Scripts/AccuracyScript.gd" id="2_wrnfy"]
 [ext_resource type="PackedScene" uid="uid://bgndkiin8jes1" path="res://Assets/Prefabs/PauseMenu.tscn" id="4_k0nc8"]
 [ext_resource type="Script" uid="uid://brgqfndr508g6" path="res://Scripts/Practice Mode Scripts/PracticeModeSettings.gd" id="5_0262f"]
+[ext_resource type="PackedScene" uid="uid://fnu52a3w3uqs" path="res://Assets/Prefabs/Side Bars.tscn" id="7_3ipjs"]
 
 [node name="Practice Mode" type="Node2D"]
 
@@ -77,3 +78,5 @@ text = "Decrease Fire Rate = \"A\""
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Show/Hide Accuracy = \"Z\""
+
+[node name="SideBars" parent="." instance=ExtResource("7_3ipjs")]
