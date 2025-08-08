@@ -14,26 +14,26 @@ script = ExtResource("1_gxdgs")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="NameInput" type="TextEdit" parent="CanvasLayer"]
-offset_left = 209.0
-offset_top = 254.0
-offset_right = 584.0
-offset_bottom = 305.0
+offset_left = 644.0
+offset_top = 383.0
+offset_right = 1171.0
+offset_bottom = 450.0
 placeholder_text = "Map Name"
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer"]
-offset_left = 585.0
-offset_top = 552.0
-offset_right = 725.0
-offset_bottom = 603.0
-theme_override_font_sizes/font_size = 25
+offset_left = 1644.0
+offset_top = 962.0
+offset_right = 1854.0
+offset_bottom = 1028.0
+theme_override_font_sizes/font_size = 40
 text = "Continue"
 
 [node name="Back Button" type="Button" parent="CanvasLayer"]
-offset_left = 94.0
-offset_top = 546.0
-offset_right = 193.0
-offset_bottom = 596.0
-theme_override_font_sizes/font_size = 20
+offset_left = 65.0
+offset_top = 952.0
+offset_right = 230.0
+offset_bottom = 1020.0
+theme_override_font_sizes/font_size = 40
 text = "< Back"
 
 [node name="FileDialog" type="FileDialog" parent="CanvasLayer"]
@@ -46,45 +46,45 @@ filters = PackedStringArray("*.mp3")
 use_native_dialog = true
 
 [node name="Music Select Button" type="Button" parent="CanvasLayer"]
-offset_left = 210.0
-offset_top = 321.0
-offset_right = 392.0
-offset_bottom = 372.0
-theme_override_font_sizes/font_size = 20
+offset_left = 720.0
+offset_top = 495.0
+offset_right = 1052.0
+offset_bottom = 566.0
+theme_override_font_sizes/font_size = 35
 text = "Select Music File"
 
 [node name="Warnings" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 281.0
-offset_top = 507.0
-offset_right = 508.0
-offset_bottom = 659.0
+offset_left = 790.0
+offset_top = 759.0
+offset_right = 1200.0
+offset_bottom = 1023.0
 alignment = 1
 
 [node name="Preexist Warning" type="Label" parent="CanvasLayer/Warnings"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 text = "Map Already Exists"
 horizontal_alignment = 1
 
 [node name="No Name Warning" type="Label" parent="CanvasLayer/Warnings"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 text = "No Name Input"
 horizontal_alignment = 1
 
 [node name="Invalid File Warning" type="Label" parent="CanvasLayer/Warnings"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 text = "Invalid File Type"
 horizontal_alignment = 1
 
 [node name="No Music Warning" type="Label" parent="CanvasLayer/Warnings"]
 visible = false
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 45
 text = "No File Selected"
 horizontal_alignment = 1
 

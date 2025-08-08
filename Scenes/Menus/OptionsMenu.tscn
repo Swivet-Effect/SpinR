@@ -7,6 +7,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 9.0
+offset_top = 9.0
+offset_right = 9.0
+offset_bottom = 9.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_6fwcd")
@@ -16,16 +20,17 @@ script = ExtResource("1_6fwcd")
 [node name="Back Button" type="Button" parent="CanvasLayer"]
 offset_left = 49.0
 offset_top = 38.0
-offset_right = 135.0
-offset_bottom = 77.0
-theme_override_font_sizes/font_size = 20
+offset_right = 185.0
+offset_bottom = 105.0
+theme_override_font_sizes/font_size = 35
 text = "< Back"
 
 [node name="Control Changer" type="OptionButton" parent="CanvasLayer"]
-offset_left = 395.0
-offset_top = 129.0
-offset_right = 570.0
-offset_bottom = 167.0
+offset_left = 879.0
+offset_top = 287.0
+offset_right = 1250.0
+offset_bottom = 354.0
+theme_override_font_sizes/font_size = 25
 selected = 0
 allow_reselect = true
 item_count = 2
@@ -36,27 +41,27 @@ popup/item_1/id = 1
 
 [node name="Text" type="Label" parent="CanvasLayer/Control Changer"]
 layout_mode = 0
-offset_left = -199.0
-offset_top = 1.0
-offset_right = -27.0
-offset_bottom = 36.0
-theme_override_font_sizes/font_size = 25
+offset_left = -306.0
+offset_top = 5.0
+offset_right = -30.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 40
 text = "Input Method:"
 
 [node name="Volume Slider" type="HSlider" parent="CanvasLayer"]
-offset_left = 409.0
-offset_top = 219.0
-offset_right = 675.0
-offset_bottom = 246.0
+offset_left = 882.0
+offset_top = 408.0
+offset_right = 1370.0
+offset_bottom = 479.0
 value = 100.0
 
 [node name="Text" type="Label" parent="CanvasLayer/Volume Slider"]
 layout_mode = 0
-offset_left = -137.0
-offset_top = -10.0
-offset_right = -38.0
-offset_bottom = 25.0
-theme_override_font_sizes/font_size = 25
+offset_left = -185.0
+offset_top = 2.0
+offset_right = -27.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 40
 text = "Volume:"
 
 [connection signal="pressed" from="CanvasLayer/Back Button" to="." method="BackButtonPressed"]

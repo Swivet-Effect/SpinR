@@ -5,7 +5,10 @@ var index
 func WhenPressed():
 	Global.previousBeat = Global.currentBeat
 	Global.currentBeat = index
-	Global.beatAngle = $".".text
+	if $".".text != null:
+		Global.beatAngle = $".".text
+	else:
+		Global.beatAngle = null
 
 func _physics_process(_delta):
 	if index == Global.currentBeat:

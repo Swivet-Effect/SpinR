@@ -14,88 +14,96 @@ script = ExtResource("1_qwwyl")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="R" type="Label" parent="CanvasLayer"]
-offset_left = 114.0
-offset_top = 321.0
-offset_right = 421.0
-offset_bottom = 467.0
+offset_left = 196.0
+offset_top = 381.0
+offset_right = 775.0
+offset_bottom = 654.0
 theme_override_colors/font_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 106
+theme_override_font_sizes/font_size = 200
 text = "SPINR"
 horizontal_alignment = 1
 
 [node name="Hide Text" type="ColorRect" parent="CanvasLayer/R"]
 layout_mode = 0
 offset_top = 35.0
-offset_right = 234.0
-offset_bottom = 117.0
-color = Color(0.027451, 0.0352941, 0.0470588, 1)
+offset_right = 444.0
+offset_bottom = 249.0
+color = Color(0.0392157, 0.0470588, 0.0627451, 1)
 
 [node name="SPIN" type="Label" parent="CanvasLayer/R"]
 layout_mode = 0
-offset_left = -34.0
-offset_right = 273.0
-offset_bottom = 146.0
-theme_override_font_sizes/font_size = 106
+offset_right = 451.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 200
 text = "SPIN"
 horizontal_alignment = 1
 
 [node name="Buttons" type="VBoxContainer" parent="CanvasLayer"]
-offset_left = 487.0
-offset_top = 252.0
-offset_right = 663.0
-offset_bottom = 572.0
+offset_left = 920.0
+offset_top = 451.0
+offset_right = 1755.0
+offset_bottom = 771.0
+theme_override_constants/separation = 25
 
-[node name="MapsButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Top Row" type="HBoxContainer" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="MapsButton" type="Button" parent="CanvasLayer/Buttons/Top Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Play Map"
 flat = true
 alignment = 0
 
-[node name="MapMakerButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="MapMakerButton" type="Button" parent="CanvasLayer/Buttons/Top Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Create Map"
 flat = true
 alignment = 0
 
-[node name="MapEditorButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="MapEditorButton" type="Button" parent="CanvasLayer/Buttons/Top Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Edit Map"
 flat = true
 alignment = 0
 
-[node name="PracticeButton" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Bottom Row" type="HBoxContainer" parent="CanvasLayer/Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="PracticeButton" type="Button" parent="CanvasLayer/Buttons/Bottom Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Practice"
 flat = true
 alignment = 0
 
-[node name="Options Button" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Options Button" type="Button" parent="CanvasLayer/Buttons/Bottom Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Options"
 flat = true
 alignment = 0
 
-[node name="Quit Button" type="Button" parent="CanvasLayer/Buttons"]
+[node name="Quit Button" type="Button" parent="CanvasLayer/Buttons/Bottom Row"]
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 50
 text = "Quit"
 flat = true
 alignment = 0
 
-[connection signal="pressed" from="CanvasLayer/Buttons/MapsButton" to="." method="PlayButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/MapMakerButton" to="." method="MapMakerButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/MapEditorButton" to="." method="MapEditorButton"]
-[connection signal="pressed" from="CanvasLayer/Buttons/PracticeButton" to="." method="PracticeButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/Options Button" to="." method="OptionsButtonPressed"]
-[connection signal="pressed" from="CanvasLayer/Buttons/Quit Button" to="." method="QuitButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Top Row/MapsButton" to="." method="PlayButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Top Row/MapMakerButton" to="." method="MapMakerButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Top Row/MapEditorButton" to="." method="MapEditorButton"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Bottom Row/PracticeButton" to="." method="PracticeButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Bottom Row/Options Button" to="." method="OptionsButtonPressed"]
+[connection signal="pressed" from="CanvasLayer/Buttons/Bottom Row/Quit Button" to="." method="QuitButtonPressed"]

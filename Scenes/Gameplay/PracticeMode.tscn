@@ -1,14 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://gkgrwjq4mis8"]
+[gd_scene load_steps=7 format=3 uid="uid://gkgrwjq4mis8"]
 
 [ext_resource type="PackedScene" uid="uid://c31tul7x5job1" path="res://Assets/Prefabs/Ring.tscn" id="1_hrx06"]
 [ext_resource type="Script" uid="uid://csrp547fu5ao8" path="res://Scripts/Practice Mode Scripts/PracticeModeRunner.gd" id="2_lutck"]
 [ext_resource type="PackedScene" uid="uid://qtc5q6kwpmp4" path="res://Assets/Prefabs/PracticeFirer.tscn" id="2_sv0mf"]
+[ext_resource type="Script" uid="uid://bjs231be4fsvv" path="res://Scripts/Map Run Scripts/AccuracyScript.gd" id="2_wrnfy"]
 [ext_resource type="PackedScene" uid="uid://bgndkiin8jes1" path="res://Assets/Prefabs/PauseMenu.tscn" id="4_k0nc8"]
 [ext_resource type="Script" uid="uid://brgqfndr508g6" path="res://Scripts/Practice Mode Scripts/PracticeModeSettings.gd" id="5_0262f"]
 
 [node name="Practice Mode" type="Node2D"]
 
 [node name="Ring" parent="." instance=ExtResource("1_hrx06")]
+
+[node name="Accuracy" type="Label" parent="."]
+visible = false
+offset_left = -20.0
+offset_top = -11.0
+offset_right = 20.0
+offset_bottom = 12.0
+horizontal_alignment = 1
+script = ExtResource("2_wrnfy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -24,10 +34,10 @@ position = Vector2(0, 600)
 script = ExtResource("5_0262f")
 
 [node name="Background" type="ColorRect" parent="PMSettings"]
-offset_left = 31.0
-offset_top = 591.0
-offset_right = 248.0
-offset_bottom = 771.0
+offset_left = 39.0
+offset_top = 731.0
+offset_right = 444.0
+offset_bottom = 1031.0
 color = Color(0.560784, 0.560784, 0.560784, 0.662745)
 
 [node name="Options" type="VBoxContainer" parent="PMSettings/Background"]
@@ -40,24 +50,30 @@ theme_override_constants/separation = 5
 
 [node name="Option 1" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Show/Hide Menu = \"X\""
 
 [node name="Option 2" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Increase Orb Speed = \"W\""
 
 [node name="Option 3" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Decrease Orb Speed = \"S\""
 
 [node name="Option 4" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Increase Fire Rate = \"Q\""
 
 [node name="Option 5" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Decrease Fire Rate = \"A\""
 
 [node name="Option 6" type="Label" parent="PMSettings/Background/Options"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Show/Hide Accuracy = \"Z\""

@@ -21,7 +21,7 @@ func _input(event):
 				KEY_A:
 					Global.fireRate += 1
 				KEY_Z:
-					pass
+					$"../Accuracy".visible = !$"../Accuracy".visible
 				_:
 					pass
 

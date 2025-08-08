@@ -13,21 +13,12 @@ script = ExtResource("1_bkc5m")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
-offset_right = 800.0
-offset_bottom = 800.0
-color = Color(0.154876, 0.154876, 0.154876, 1)
-
-[node name="Loading Text" type="Label" parent="."]
-layout_mode = 0
-offset_left = 562.0
-offset_top = 701.0
-offset_right = 753.0
-offset_bottom = 758.0
-theme_override_font_sizes/font_size = 41
-text = "Loading..."
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0392157, 0.0470588, 0.0627451, 1)
 
 [node name="Load Timer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 autostart = true
 

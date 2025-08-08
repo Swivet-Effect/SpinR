@@ -36,25 +36,25 @@ script = ExtResource("1_5flaf")
 [node name="Screen Darken" type="Panel" parent="Game Camera/UI"]
 offset_left = -2.0
 offset_top = -2.0
-offset_right = 801.0
-offset_bottom = 801.0
+offset_right = 1921.0
+offset_bottom = 1081.0
 
 [node name="Failure Text" type="Label" parent="Game Camera/UI/Screen Darken"]
 layout_mode = 0
-offset_left = 199.0
-offset_top = 234.0
-offset_right = 602.0
-offset_bottom = 400.0
-theme_override_font_sizes/font_size = 121
+offset_left = 663.0
+offset_top = 419.0
+offset_right = 1263.0
+offset_bottom = 665.0
+theme_override_font_sizes/font_size = 180
 text = "FAILED"
 
 [node name="Restart Button" type="Button" parent="Game Camera/UI/Screen Darken"]
 layout_mode = 0
-offset_left = 321.0
-offset_top = 427.0
-offset_right = 479.0
-offset_bottom = 504.0
-theme_override_font_sizes/font_size = 50
+offset_left = 849.0
+offset_top = 721.0
+offset_right = 1074.0
+offset_bottom = 824.0
+theme_override_font_sizes/font_size = 75
 theme_override_styles/focus = SubResource("StyleBoxFlat_sx3po")
 theme_override_styles/disabled_mirrored = SubResource("StyleBoxFlat_sx3po")
 theme_override_styles/disabled = SubResource("StyleBoxFlat_sx3po")
