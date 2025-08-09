@@ -21,7 +21,8 @@ func RestartButton() -> void:
 	get_tree().change_scene_to_file(Global.loadScreen)
 
 func OptionsButton() -> void:
-	pass
+	$CanvasLayer/PauseBox/StraightenMenu.visible = false
+	$CanvasLayer/PauseBox/Control.visible = true
 
 func ToMenuButton() -> void:
 	Global.reset = true
@@ -40,3 +41,20 @@ func _ready():
 		$CanvasLayer/PauseBox/StraightenMenu/Restart.visible = true
 	else:
 		$CanvasLayer/PauseBox/StraightenMenu/Restart.visible = false
+	$"CanvasLayer/PauseBox/Control/Volume Slider".value = Global.volume
+
+
+func VolumeChanged(value: float) -> void:
+	Global.volume = value
+
+func InputChanged(index: int) -> void:
+	if index == 0:
+		Global.inputType = "mouse"
+	elif index == 1:
+		Global.inputType = "controller"
+	else:
+		Global.inputType = "mouse"
+
+func ExitOptions() -> void:
+	$CanvasLayer/PauseBox/StraightenMenu.visible = true
+	$CanvasLayer/PauseBox/Control.visible = false

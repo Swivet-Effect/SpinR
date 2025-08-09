@@ -43,7 +43,6 @@ text = "Restart"
 flat = true
 
 [node name="Options" type="Button" parent="CanvasLayer/PauseBox/StraightenMenu"]
-visible = false
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.745098, 0, 1)
 theme_override_font_sizes/font_size = 40
@@ -64,7 +63,66 @@ theme_override_font_sizes/font_size = 40
 text = "Quit"
 flat = true
 
+[node name="Control" type="Control" parent="CanvasLayer/PauseBox"]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back Button" type="Button" parent="CanvasLayer/PauseBox/Control"]
+layout_mode = 2
+offset_left = 15.0
+offset_top = 16.0
+offset_right = 151.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 35
+text = "< Back"
+
+[node name="Control Changer" type="OptionButton" parent="CanvasLayer/PauseBox/Control"]
+layout_mode = 2
+offset_left = 369.0
+offset_top = 141.0
+offset_right = 740.0
+offset_bottom = 208.0
+theme_override_font_sizes/font_size = 25
+selected = 0
+allow_reselect = true
+item_count = 2
+popup/item_0/text = "Mouse"
+popup/item_0/id = 0
+popup/item_1/text = "Controller"
+popup/item_1/id = 1
+
+[node name="Text" type="Label" parent="CanvasLayer/PauseBox/Control/Control Changer"]
+layout_mode = 0
+offset_left = -306.0
+offset_top = 5.0
+offset_right = -30.0
+offset_bottom = 60.0
+theme_override_font_sizes/font_size = 40
+text = "Input Method:"
+
+[node name="Volume Slider" type="HSlider" parent="CanvasLayer/PauseBox/Control"]
+layout_mode = 2
+offset_left = 269.0
+offset_top = 269.0
+offset_right = 757.0
+offset_bottom = 340.0
+value = 100.0
+
+[node name="Text" type="Label" parent="CanvasLayer/PauseBox/Control/Volume Slider"]
+layout_mode = 0
+offset_left = -185.0
+offset_top = 2.0
+offset_right = -27.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 40
+text = "Volume:"
+
 [connection signal="pressed" from="CanvasLayer/PauseBox/StraightenMenu/Restart" to="." method="RestartButton"]
 [connection signal="pressed" from="CanvasLayer/PauseBox/StraightenMenu/Options" to="." method="OptionsButton"]
 [connection signal="pressed" from="CanvasLayer/PauseBox/StraightenMenu/BackToMenu" to="." method="ToMenuButton"]
 [connection signal="pressed" from="CanvasLayer/PauseBox/StraightenMenu/Quit" to="." method="QuitButton"]
+[connection signal="pressed" from="CanvasLayer/PauseBox/Control/Back Button" to="." method="ExitOptions"]
+[connection signal="item_selected" from="CanvasLayer/PauseBox/Control/Control Changer" to="." method="InputChanged"]
+[connection signal="value_changed" from="CanvasLayer/PauseBox/Control/Volume Slider" to="." method="VolumeChanged"]
